@@ -147,7 +147,7 @@ class Host:
         return self._hostname in ("localhost", socket.gethostname())
 
     def ssh_connect(self, username: str, password: Optional[str] = None, *, discover_auth: bool = True, rsa_path: str = default_id_rsa_path(), ed25519_path: str = default_ed25519_path(), timeout: float = 3600) -> None:
-        assert not self.is_localhost()
+        #assert not self.is_localhost()
         if not self.ping():
             logger.info(f"waiting for '{self._hostname}' to respond to ping")
             self.wait_ping()
