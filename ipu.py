@@ -173,7 +173,7 @@ if [ -d "$WORKDIR" ]; then
     fi
 fi
 cd $CURDIR
-date -s "Thu Sep 19 08:18:22 AM EDT 2024"
+date -s "Feb 19 08:10:40 2025 GMT"
 cp /work/redfish/redfish-1.8-iso-filesize-hotfix /usr/bin/ipu-redfish-server
 cp /work/redfish/certs/server.key /etc/pki/ca-trust/source/anchors/
 cp /work/redfish/certs/server.crt /etc/pki/ca-trust/source/anchors/
