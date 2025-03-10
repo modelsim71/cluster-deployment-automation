@@ -54,7 +54,7 @@ class IPUClusterNode(ClusterNode):
     def _boot_iso(self, iso: str) -> None:
         assert self.config.ip
         dhcpConfig.configure_iso_network_port(self.network_api_port, self.config.ip)
-        dhcpConfig.configure_dhcpd(self.config)
+        dhcpConfig.configure_dhcpd(self.config, self.network_api_port)
         self._redfish_boot_ipu(self.external_port, self.config, iso)
         logger.info(f"Redfish boot triggered, attempting to connect to ACC at ip {self.config.ip}")
         # wait on install + reboot to complete
@@ -173,7 +173,7 @@ if [ -d "$WORKDIR" ]; then
     fi
 fi
 cd $CURDIR
-date -s "Thu Sep 19 08:18:22 AM EDT 2024"
+date -s "Mar 10 09:47:10 2025 GMT"
 cp /work/cli_fix/libmev_imc_ipumgmtd.so /usr/lib64
 cp /work/cli_fix/ipumgmtd /usr/bin
 cp /work/redfish/redfish-1.8-iso-filesize-hotfix /usr/bin/ipu-redfish-server
